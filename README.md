@@ -9,6 +9,7 @@ This README would normally document whatever steps are necessary to get your app
 ### Requirements ###
 * Virtualbox `apt install virtualbox`
 * Vagrant `apt install vagrant`
+* Vagrant VBGuest Addon - `vagrant plugin install vagrant-vbguest`
 
 ### How do I get set up? ###
 
