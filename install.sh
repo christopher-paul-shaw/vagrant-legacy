@@ -7,25 +7,21 @@ DBUSER=dbuser
 DBPASSWD=test123
 PHPVER=5
 
-echo -e "\n--- Updating ---\n"
+echo -e "--- Updating ---\n"
 apt-get -qq update
 apt-get -y install vim curl build-essential python-software-properties git 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - 
 apt-get -qq update
-echo -e "\nComplete!\n"
-
-
-
-
-echo -e "\n--- Setting up MySQL ---\n"
+echo -e "--- Setting up MySQL ---\n"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password $DBPASSWD"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $DBPASSWD"
 apt-get -y install mysql-server
 mysql -uroot -p$DBPASSWD -e "CREATE DATABASE $DBNAME"
 mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to '$DBUSER'@'localhost' identified by '$DBPASSWD'"
 
-echo -e "\n--- Setting Up Apache && PHP ---\n"
-apt-get -y install php$PHPVER apache2 libapache2-mod-php$PHPVER php$PHPVER-curl php$PHPVER-gd php$PHPVER-mysql php-gettext 
+echo -e "--- Setting Up Apache && PHP ---\n"
+apt-get -y install apache2 tidy pdftk zbarimg xpdf pdftotext imagemagick libssh2-php php-pear php5 php5-cli php5-common php5-curl php5-dev php5-gd php5-imagick php5-imap php5-intl php5-mcrypt php5-memcached php5-mysql php5-mysqlnd php5-pspell php5-suhosin-extension php5-xdebug php5-xmlrpc
+
 a2enmod rewrite
 > /etc/apache2/sites-enabled/000-default.conf
 echo "
