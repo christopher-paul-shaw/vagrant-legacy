@@ -1,6 +1,9 @@
-# README #
+VagrantFile and install script for rapid setup of development enviroment.
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This version is intended for older projects and code running on php5 and mysql5.
+All newer projects should use latest versions of included technologies.
+
+This was created for personal usage and released later.
 
 ### What is this repository for? ###
 
@@ -15,6 +18,6 @@ This README would normally document whatever steps are necessary to get your app
 
 * Create Directory /home/{USER}/Projects/
 * Create Directory /home/{USER}/vagrant/
-* Clone Repository into /home/{USER}/vagrant/vagrant-evo
-* CD Into  /home/{USER}/vagrant/vagrant-evo
+* Clone Repository into /home/{USER}/vagrant/vagrant-legacy
+* CD Into  /home/{USER}/vagrant/vagrant-legacy
 * Run `vagrant up`
